@@ -1,0 +1,23 @@
+<ul class="pagination">
+    {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+    {% endif %}
+    {% if show_first %}
+        <li><a href="?page=1">&nbsp;&nbsp;1&nbsp;&nbsp;</a></li>
+        <li class="disabled"><a href="#">...</a></li>
+    {% endif %}
+    {% for linkpage in page_numbers %}
+        {% if linkpage == page_obj.number %}
+            <li class="active"><a href="#">{{ page_obj.number }} <span class="sr-only">(current)</span></a></li>
+        {% else %}
+            <li><a href="?page={{ linkpage }}">&nbsp;&nbsp;{{ linkpage }}&nbsp;&nbsp;</a></li>
+        {% endif %}
+    {% endfor %}
+    {% if show_last %}
+        <li class="disabled"><a href="#">.sigue mongol</a></li>
+        <li><a href="?page=last">&nbsp;&nbsp;{{ paginator.num_pages }}&nbsp;&nbsp;</a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+    {% endif %}
+</ul><!-- pagination -->

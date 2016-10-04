@@ -1,0 +1,13 @@
+[
+{
+    "pk": 1,
+    "model": "auth.user",
+    "fields": {
+        "username": "admin",
+        "is_superuser": true,
+        "is_staff": true,
+        "password": "pbkdf2_sha256$12000$vieozkQGEMvO$/UaqjfpP3fxANQgAgIKcegCb+M+H6pBVCTY00HdpQlI=",
+        "email": "cajusol17@gmail.com"
+    }
+}
+]

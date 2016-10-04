@@ -1,0 +1,21 @@
+{% extends 'pegasus/base.html' %}
+{% load staticfiles %}
+
+{% block container %}
+<div class="row">
+    <div class="col-sm-4 col-md-3">
+        <div class="dashboard-item well well-sm">
+            <a href="{% url 'personal_list' %}">
+                <h4>RRHH</h4>
+                <div class="icon">
+                    <img src="{% static 'flat-ui/images/icons/clipboard.svg' %}" height="90">
+                </div>
+                <div class="text">
+                    <var>0</var>
+                    Personas
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

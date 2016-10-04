@@ -1,0 +1,49 @@
+{% extends 'pegasus/base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+<form class="form" action='' method="POST">
+    {% csrf_token %}
+    <div class="page-header">
+        <div class="pull-right hidden-print">
+            <button type="submit" class="btn-hg btn-success"><i class="icon-plus icon-white"></i> Guardar</button>
+        </div>
+
+        <h3>Nueva planilla</h3>
+    </div>
+
+    <form class="form" action='' method="GET">
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-default">Filtrar</button>
+    </form>
+
+    {% if form.is_valid %}
+    <h4>{{ paginator.count }} personas</h4>
+    <div class="table-responsive">
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Trabajador</th>
+                <th>Tipo Plan.</th>
+                <th>Remuneración</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for personal in personal_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>
+                    <a href="">{{ personal }}</a><br/>
+                    {{ personal.dni }}
+                </td>
+                <td>{{ personal.mod_laboral }}</td>
+                <td>{{ personal.monto_rem }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</form>
+    {% endif %}
+{% endblock %}
