@@ -24,7 +24,10 @@
     <tbody>
         {% for planilla in planilla_list %}
         <tr>
-            <td><a href="{% url "planilla_detail" current_year planilla.id %}">{{ planilla.n_planilla }}</a></td>
+
+            <td><a href="{% url 'planilla_detail' current_year planilla.id %}">{{ planilla.n_planilla }}</a>
+            </td>
+
             <td>{{ planilla.mod_laboral }}</td>
             <td>{{ planilla.tipo_planilla }}</td>
             <td>{{ planilla.entidad }}</td>
