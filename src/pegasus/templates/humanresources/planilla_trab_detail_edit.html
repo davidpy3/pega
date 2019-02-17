@@ -1,0 +1,22 @@
+{% extends 'pegasus/base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <h2 class="sub-header">
+    {% if planilla_detalle.id %}
+        {{ planilla_detalle.dni }}
+    {% else %}
+        Nuevo personal
+    {% endif %}
+    </h2>
+
+    {% csrf_token %}
+
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            {% bootstrap_icon "star" %} Guardar
+        </button>
+    {% endbuttons %}
+{% endblock %}
+

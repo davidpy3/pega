@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="page-header">
+        <div class="pull-right hidden-print">
+            <a href="" class="btn btn-hg btn-info"><i class="icon-plus icon-white"></i> Create</a>
+        </div>
+        <h3>Template list</h3>
+    </div>
+
+    <div class="pull-right hidden-print">
+        <form class="pull-right col-lg-4 form-group">
+            <div class="input-group input-group-rounded">
+                <input type="search" ng-model="q" class="form-control" placeholder="Search..." id="search-query-7">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><span class="fui-search"></span></button>
+                </span>
+            </div>
+        </form>
+    </div>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Rating</th>
+            <th>Votes</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>The Shawshank Redemption</td>
+            <td>1994</td>
+            <td>9.2</td>
+            <td>923,629</td>
+            <td><span class="fui-check-inverted text-primary"></span></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>The Godfather</td>
+            <td>1972</td>
+            <td>9.2</td>
+            <td>663,133</td>
+            <td><span class="fui-cross-inverted text-primary"></span></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>The Godfather: Part II</td>
+            <td>1974</td>
+            <td>9.0</td>
+            <td>427,132</td>
+            <td><span class="fui-cross-inverted text-primary"></span></td>
+        </tr>
+
+    </table>
+{% endblock %}

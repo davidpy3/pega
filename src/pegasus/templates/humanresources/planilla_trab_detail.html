@@ -1,0 +1,33 @@
+{% extends 'pegasus/base.html' %}
+
+{% block content %}
+    <h2 class="sub-header">Planilla Trab {{ planillatrab }}</h2>
+    {{ planillatrab.personal }}
+    <h3>Detalles</h3>
+    <div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Codigo</th>
+                <th>Concepto</th>
+                <th>Valor</th>
+                <th>%</th>
+                <th>Monto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for planilla_detalle in planillatrab.get_planilla_detalles %}
+            <tr>
+                <td>{{ planilla_detalle.get_ind_display }}</td>
+                <td>{{ planilla_detalle.concepto.codigo }}</td>
+                <td>{{ planilla_detalle.concepto }}</td>
+                <td>{{ planilla_detalle.valor }}</td>
+                <td>{{ planilla_detalle.porcen }}</td>
+                <td>{{ planilla_detalle.monto }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

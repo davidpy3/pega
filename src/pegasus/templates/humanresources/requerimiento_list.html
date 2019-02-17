@@ -1,0 +1,60 @@
+{% extends 'pegasus/base.html' %}
+{% load paginator %}
+
+{% block content %}
+
+<div class="page-header">
+        <div class="pull-right hidden-print">
+        
+
+         
+   
+
+   <!--  <div class="row-fluid">
+      <select class="selectpicker" data-show-subtext="true" data-live-search="true">
+        <option data-subtext> 2009 </option>
+        <option data-subtext>2010</option>
+        <option data-subtext>2011</option>
+        <option data-subtext>2012</option>
+        <option data-subtext>2013</option>
+        <option data-subtext="Rep California" disabled="disabled">2014</option>
+      </select>
+      
+    </div> -->
+
+ 
+
+
+        </div>
+        <h3 class="sub-header">Requerimiento de Bienes / Servicio</h3>
+</div>
+
+
+    
+
+    <div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ano</th>
+                <th>N_requer</th>
+                <th>Tipo</th>
+                <th>Num_doc</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            {% for orden in requerimiento_list %}
+            <tr>
+                <td>{{ requerimiento.ano_eje }}</td>
+                <td>{{ requerimiento.n_requer }}</td>
+                <td>{{ requerimiento.fecha }}</td>
+                <td>{{ requerimiento.mes }}</td>
+               
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    {% paginator %}
+{% endblock %}

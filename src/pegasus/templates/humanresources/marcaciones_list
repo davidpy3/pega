@@ -1,0 +1,37 @@
+{% extends 'pegasus/base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+  <h2 class="sub-header">Personal</h2>
+            <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Dni.</th>
+                        <th>Fecha</th>
+                        <th>Tipo_Hor</th>
+                        <th>Turno</th>
+                        <th>Registro</th>
+                        <th>Observacion</th>
+                        <th>estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for marcaciones in marcaciones_list %}
+                    <tr>
+                        <td>
+                            <a href="{% url "personal_edit" personal.dni %}">
+                                {{ personal.nomb_comp }}
+                            </a>
+                        </td>
+                        <td>{{ marcaciones.fecha_hora }}</td>
+                        <td>{{ marcaciones.turno }}</td>
+                        <td>{{ marcaciones.registro }}</td>
+                        <td>{{ marcaciones.observ }}</td>
+                        <td>{{ marcaciones.estado }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            </div>
+{% endblock %}

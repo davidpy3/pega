@@ -1,0 +1,49 @@
+{% extends 'pegasus/base.html' %}
+{% load paginator %}
+
+{% block content %}
+
+<div class="page-header">
+        <div class="pull-right hidden-print">
+         <a href="{% url 'personal_add' %}" class="btn btn-hg btn-info"><i class="icon-plus icon-white"></i> Nuevo Personal</a>
+        </div>
+        <h3 class="sub-header">Personal de Planta</h3>
+</div>
+
+
+    
+
+    <div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Est.</th>
+                <th>Cat.</th>
+                <th>DNI</th>
+                <th>Ap. / Nom.</th>
+                <th>Fec. Nac.</th>
+                <th>Edad</th>
+                <th>Sex</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for personal in personal_list %}
+            <tr>
+                <td>{{ personal.get_situacion_display }}</td>
+                <td>{{ personal.mod_laboral }}</td>
+                <td>{{ personal.dni }}</td>
+                <td>
+                    <a href="{% url "personal_edit" personal.dni %}">
+                        {{ personal.nomb_comp }}
+                    </a>
+                </td>
+                <td>{{ personal.fecha_nac|date }}</td>
+                <td>{{ personal.get_years_old }}</td>
+                <td>{{ personal.get_sexo_display }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    {% paginator %}
+{% endblock %}

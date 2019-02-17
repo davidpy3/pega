@@ -1,0 +1,24 @@
+
+
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE':'sqlserver_ado',
+   #     'HOST': '.',
+    #    'NAME': 'pegasus',
+        #'OPTIONS': {
+        #    'provider': 'SQLNCLI10',
+        #    'extra_params': 'DataTypeCompatibility=80;MARS Connection=True;',
+        #},
+    #}
+#}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'pegasopy',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+  }
+}

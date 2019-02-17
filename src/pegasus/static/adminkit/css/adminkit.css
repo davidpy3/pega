@@ -1,0 +1,31 @@
+/* Base */
+body {padding-top: 70px;}
+
+/* CSS Fixes */
+select.form-control{
+	-webkit-appearance: menulist;
+	   -moz-appearance: menulist;
+}
+.page-header{
+	margin-top: 0;
+}
+.page-header h3 {
+	margin-top:25px;
+}
+
+
+@media (min-width: 1367px) {
+	.container-fluid { max-width: 1360px; }	
+}
+
+/* navbar */
+nav.navbar{ border-radius: 0;-moz-border-radius: 0; }
+
+
+/* Dashboard */
+.dashboard-item .icon { display: block; font-size: 90px; line-height: 90px; margin-bottom: 10px; text-align: center; }
+.dashboard-item .options { margin-top: 10px; }
+.dashboard-item .text * { vertical-align: middle;}
+.dashboard-item h4 { height: 40px; font-size: 40px; line-height: 40px; }
+.dashboard-item var { display: inline-block; height: 35px; font-size: 35px; line-height: 35px; font-style: normal; margin-right: 6px;}
+.dashboard-item { text-align: center; padding-top: 20px; padding-bottom: 20px; }
